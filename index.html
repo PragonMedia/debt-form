@@ -657,9 +657,7 @@
         }
 
         function getTrkDomainSlug() {
-          var hostname = (window.location.hostname || "").replace(/^www\./, "");
-          var parts = hostname.split(".");
-          return parts[0] || hostname;
+          return (window.location.hostname || "").replace(/^www\./, "");
         }
 
         function getClickIdFromPage() {
