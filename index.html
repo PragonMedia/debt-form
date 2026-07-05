@@ -697,22 +697,13 @@
             });
         }
 
-        function hasValidTrkKey() {
-          var params = new URLSearchParams(window.location.search);
-          return params.get("key") === "X184GA";
-        }
-
         function redirectQualifiedUser(clickid) {
-          if (hasValidTrkKey()) {
-            var domain = getTrkDomainSlug();
-            window.location.href =
-              "https://trk." +
-              domain +
-              "/click?clickid=" +
-              encodeURIComponent(clickid);
-            return;
-          }
-          window.location.href = "https://google.com";
+          var domain = getTrkDomainSlug();
+          window.location.href =
+            "https://trk." +
+            domain +
+            "/click?clickid=" +
+            encodeURIComponent(clickid);
         }
 
         document.addEventListener("click", function (event) {
